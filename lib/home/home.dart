@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:looseit/home/suggestions.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -17,99 +18,148 @@ class Home extends StatelessWidget {
         shadowColor: Colors.deepOrangeAccent,
         centerTitle: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Hey, Anurag!",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 46, 45, 45), fontSize: 20),
-                ),
-                const Text(
-                  "You have to believe in yourself when no one else does. ",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 104, 81, 81), fontSize: 15),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                homecardstop(),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Hey, Anurag!",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 46, 45, 45), fontSize: 30),
+                  ),
+                  const Text(
+                    "You have to believe in yourself when no one else does. ",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 104, 81, 81), fontSize: 15),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Column(
+                    children: [
+                      Text(
+                        "Goals Today",
+                        style: TextStyle(fontSize: 15),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  homecardstop(),
+                  Suggestion()
+                ],
+              ),
             ),
-          ),
-        ],
+            // Add Expanded or Flexible here to prevent overflow
+          ],
+        ),
       ),
     );
   }
 
   SizedBox homecardstop() {
     return SizedBox(
-      height: 200,
+      height: 120,
       child: ListView(
-          scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
-          children: const [
-            SizedBox(
-              width: 200,
-              child: Card(
-                color: Colors.black38,
-                child: Column(
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.monitor_weight_rounded,
-                              size: 50,
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "78 kg",
-                              style: TextStyle(fontSize: 50),
-                            )
-                          ],
-                        )),
-                  ],
-                ),
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        children: const [
+          SizedBox(
+            width: 150,
+            child: Card(
+              color: Color.fromARGB(96, 204, 200, 200),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.monitor_weight_rounded,
+                          size: 30,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "78 kg",
+                          style: TextStyle(fontSize: 30),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(
-              width: 200,
-              child: Card(
-                color: Colors.black38,
-                child: Column(
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.bubble_chart,
-                              size: 50,
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "30mins",
-                              style: TextStyle(fontSize: 50),
-                            )
-                          ],
-                        )),
-                  ],
-                ),
+          ),
+          SizedBox(
+            width: 150,
+            child: Card(
+              color: Color.fromARGB(96, 204, 200, 200),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.directions_walk_outlined,
+                          size: 30,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "30mins",
+                          style: TextStyle(fontSize: 30),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-          ]),
+          ),
+          SizedBox(
+            width: 150,
+            child: Card(
+              color: Color.fromARGB(96, 204, 200, 200),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.food_bank,
+                          size: 30,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "1.5k KCal",
+                          style: TextStyle(fontSize: 30),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
